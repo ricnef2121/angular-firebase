@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService} from '../../../services/task.service';
 import { NgForm } from '@angular/forms';
 import { Task,Visita } from '../../../models/task';
-import {FiltroComboComponent} from './../../filtro-combo/filtro-combo.component'
+//import {FiltroComboComponent} from './../../filtro-combo/filtro-combo.component'
 
 //task class
 import { AngularFireDatabase,AngularFireList } from 'angularfire2/database';
@@ -21,8 +21,7 @@ class Visita {
 })
 export class TaskComponent implements OnInit {/*
 public visitas:FirebaseListObservable<Visita[]>;*/
-  constructor(private taskService:TaskService,
-  private filtroCombo:FiltroComboComponent)
+  constructor(private taskService:TaskService)
    /* private db: AngularFireDatabase) */{
      /* this.db.list('visitas');*/
      }
@@ -37,7 +36,7 @@ public visitas:FirebaseListObservable<Visita[]>;*/
   ngOnInit() {
     this.taskService.getTask();
     this.resetForm();
-    this.filtroCombo.contador();
+   // this.filtroCombo.contador();
   }
 
 onSubmit(taskForm:NgForm){
