@@ -1,0 +1,83 @@
+<div class="card-panel teal lighten-2">
+ <div> <h2>Filters</h2>
+  <input type="search"
+  [(ngModel)]="ciudad"
+         (change)="filterExact('ciudad', ciudad)"
+  >
+
+  <h4>ciudad</h4>
+  <div class="input-field col s12">
+  <select 
+  [(ngModel)]="ciudad" (change)="filterExact('ciudad', ciudad)" >
+    <option value="Poza Rica">Poza Rica</option>
+    <option value="Tuxpan">Tuxpan</option>
+    <option value="Coatzintla">Coatzintla</option>
+  </select>
+</div>
+  <button *ngIf="ciudad"
+          (click)="removeFilter('ciudad')">
+
+          Remove filter
+  </button>
+ </div>
+  <h4>por edad</h4>
+
+  <input type="number"
+         [(ngModel)]="edad"
+         (change)="filterGreaterThan('edad', edad)">
+
+  <button *ngIf="edad"
+          (click)="removeFilter('edad')">
+
+          Remove filter
+        </button>
+
+  <h4>por genero</h4>
+
+  <select [(ngModel)]="genero" (change)="filterExact('genero', genero)">
+    <option value="hombre">Hombre</option>
+    <option value="mujer">Mujer</option>
+
+  </select>
+
+  <button *ngIf="genero"
+          (click)="removeFilter('genero')">
+
+          Remove filter
+  </button>
+  <div class="card">
+      <div class="card-panel teal lighten-2">
+        <h5 class="text-center">LISTADO POR FILTRO</h5>
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>EDAD</th>
+                    <th>GENERO</th>
+                    <th>CIUDAD</th>
+
+                </tr>
+              </thead>
+          <tbody>
+            <tr *ngFor="let cliente of filteredClientes"> 
+              <td>{{cliente.nombre}}</td>
+              <td>{{cliente.edad}}</td>
+              <td>{{cliente.genero}}</td>
+              <td>{{cliente.ciudad}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+
+
+
+    <button
+    (click)="contador()">
+
+    contador
+</button>        
+
+</div>

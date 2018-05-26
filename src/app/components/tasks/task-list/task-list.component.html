@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card body">
+    <h5 class="text-center">LISTA DE CLIENTES</h5>
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>EDAD</th>
+                <th>GENERO</th>
+                <th>CIUDAD</th>
+                <th>FECHA DE REGISTRO</th>
+            </tr>
+          </thead>
+      <tbody>
+        <tr *ngFor="let Task of taskList"> 
+          <!--<td>{{Task.$key}}</td>-->
+          <td>{{Task.$key}}</td>
+          <td>{{Task.nombre}}</td>
+          <td>{{Task.edad}}</td>
+          <td>{{Task.genero}}</td>
+          <td>{{Task.ciudad}}</td>
+          <td>{{Task.today}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
