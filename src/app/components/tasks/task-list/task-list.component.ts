@@ -25,7 +25,18 @@ taskList: Task[];
     private db:AngularFireDatabase
   ) { }
 
+  conta=0;
+  /*
+  numbers=[1,2,3,4,20,25,2,3];
+  contador(){
+    for (let i = 0; i< this.numbers.length; i++) {
+      var conta=conta+1;      
+      console.log(this.conta);
+  }
+  }
+*/
   ngOnInit() {
+   // this.contador();
     //metodo selec * from clientes
     this.taskService.getTask()
     //metodo para traer los cambios de cada cambio que haya en la base
@@ -37,8 +48,13 @@ taskList: Task[];
       item.forEach(element=>{
         let x =element.payload.toJSON();
         x["$key"]=element.key;
-        this.taskList.push(x as Task);
-      });
+        this.taskList.push(x as Task);        
+      }
+    )
+    for (let i = 0; i< this.taskList.length; i++) {
+      var conta=conta+1;      
+      console.log(this.conta);}
+    ;
     /* $key:string;
     nombre:string;
     edad:number;
@@ -48,5 +64,6 @@ taskList: Task[];
     today =Date();
     */});
   }
+  
 
 }

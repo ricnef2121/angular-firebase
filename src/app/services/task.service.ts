@@ -25,6 +25,8 @@ export class TaskService {
     return this.visitaList=this.firebase.list('Visitas');
   }
 
+  
+
   getTaskEdad(){
     return this.taskList=this.firebase.list('Clientes');
 }
